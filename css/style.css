@@ -5,11 +5,10 @@
     padding: 0;
     text-decoration: none;
 }
-
+/* Se colocó font-size: 11px, para tomar como referencia el HTML y usar rem, luego en media queries se modifica valor a 16px */
 html {
     font-size: 11px;
 }
-
 /* HEADER */
 header {
     align-items: center;
@@ -26,20 +25,21 @@ header {
 
 /*----------LOGO---------*/
 .logo {
-    display: flex;
     align-items: center;
     cursor: pointer;
+    display: flex;
     height: 2.5rem;
     width: 9.375rem;
 }
 
 /*------- MENÚ -------*/
-.menu{
+.menu {
     height: 100%;
 }
+
 .menu>ul {
-    list-style: none;
     height: 100%;
+    list-style: none;
 }
 
 .menu>ul>li {
@@ -47,10 +47,10 @@ header {
     flex-wrap: wrap;
     font-size: 1.6rem;
     font-weight: 700;
-    position: relative;
     height: 100%;
+    position: relative;
 }
-
+/* ------- SUB MENÚ ------ */
 .submenu {
     align-items: center;
     background-color: #F3613C;
@@ -72,12 +72,15 @@ header {
 .submenu a {
     color: white
 }
-
+.submenu li:hover{
+    transform: scale(1.3);
+}
+/* Menú desplegable al pasar el cursos por el ícono de hamburguesa */
 .menu>ul>li:hover .submenu {
     background-color: #F3613C;
     right: 0;
     transition: 0.4s;
-    top: 6rem;
+    top: 3.3rem;
     transition-timing-function: ease;
     visibility: visible;
     z-index: 2;
@@ -90,7 +93,7 @@ main>div {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+/* --- BOTONES: Se aplican propiedades genéricas y, luego, se modifican algunas según el tipo de botón ---- */
 .button {
     background-color: #F3603B;
     border: none;
@@ -104,24 +107,26 @@ main>div {
     margin: 0.5rem;
     width: 8.3rem;
 }
-.desktop{
+/* Botón que solo aparece en la versión desktop */
+.desktop {
     display: none;
 }
 
 /* Bloques */
 main>div>section {
     width: 80vw;
-
-
 }
 
 /*---------CONTAINER1 IMAGEN ----------*/
-.container-1 img {
-    width: 100%;
-    height: 100%;
-
-
+.container-1{
+    display: flex;
+    justify-content: center;
 }
+.container-1 img {
+    width: 90%;
+    height: 90%;
+}
+/* Bloques con propiedades compartidas, luego se modifican algunas según sea necesario */
 
 .container-2,
 .container-3 {
@@ -129,7 +134,6 @@ main>div>section {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 
 .container-2>div,
@@ -142,7 +146,7 @@ main>div>section {
 .container-3 div h3,
 .container-5 h3 {
     color: #232C50;
-    font-size: 3.7rem;
+    font-size: 3rem;
     font-weight: 700;
     text-align: center;
 }
@@ -150,252 +154,267 @@ main>div>section {
 .container-2 div p,
 .container-3 div p,
 .container-4 p {
-    width: 70%;
+    color: #B3B2B7;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #B3B2B7;
-    text-align: justify;
-    margin: 0.5rem 0rem;
     line-height: 2rem;
+    margin: 0.5rem 0rem;
+    text-align: justify;
+    width: 70%;
 }
 
+/* Container-3  */
 .container-3 {
     padding: 2rem 0rem;
 }
 
 .container-3 div h3 {
-    width: 70%;
     font-size: 2.2rem;
+    width: 70%;
 }
 
 .container-3 div p {
     font-size: 1.1rem;
 }
 
+/* Container-4  */
 .container-4>div {
     margin: 2rem 0rem;
 }
-
-.uno,
-.dos,
-.tres {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 2.5em;
-
-}
-
-.uno h4,
-.dos h4,
-.tres h4 {
-    position: relative;
-    right: 1.4rem;
-    color: #232C50;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    height: 2.5rem;
-    background-color: rgba(254, 228, 221, 0.5);
-    padding-left: 2rem;
-    font-size: 1rem;
-}
-
-.num {
-    z-index: 1;
-    width: 5.5rem;
-    border-radius: 14;
-    font-weight: 700;
-    cursor: auto;
-    box-shadow: none;
-}
-
 .container-4 p {
     font-size: 1.1rem;
     width: 100%;
 }
 
+/* Lista numerada, se aplica primero la estructura de los bloques en los div, y luego a cada h4 */
+.uno,
+.dos,
+.tres {
+    align-items: center;
+    display: flex;
+    height: 2.5em;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.uno h4,
+.dos h4,
+.tres h4 {
+    align-items: center;
+    background-color: rgba(254, 228, 221, 0.5);
+    color: #232C50;
+    display: flex;
+    font-size: 1rem;
+    height: 2.5rem;
+    padding-left: 2rem;
+    position: relative;
+    right: 1.4rem;
+    width: 100%;
+}
+/* Botones numerados: Se tomaron las propiedades de la clase .button, y se agregaron y/o modificaron otras */
+.num {
+    box-shadow: none;
+    border-radius: 14;
+    cursor: auto;
+    font-weight: 700;
+    width: 5.5rem;
+    z-index: 1;
+}
+
+/* Container-5 */
 .container-5 {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     width: 100%;
 }
 
 .container-5 img {
-    top: -1.8rem;
     height: 5rem;
-    width: 5rem;
     position: absolute;
+    top: -1.8rem;
+    width: 5rem;
 }
 
 .container-5 h3 {
-    padding: 1rem 0rem 5rem 0rem;
     font-size: 2.2rem;
+    padding: 1rem 0rem 5rem 0rem;
 }
-
-.container-5>div>article {
-    position: relative;
-    padding: 3rem 3rem 1rem 3rem;
-    margin-bottom: 1rem;
-    background-color: #FAFAFA;
-    width: 28rem;
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+/*Elemento padre, para luego distribuir los bloques correctamente*/
+.personas {
     align-items: center;
-}
-
-.avatar {
-    padding-top: 1rem;
-    color: #232C50;
-    font-weight: 700;
-    font-size: 1rem;
-}
-.personas{
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
-.anisha, .shanai{
-    visibility: collapse;
+/* Solo se le aplican estas propiedades a la clase .ali, para no aplicarle a todos los avatares, ya que de hacerlo, se crea un
+margen blanco a la derecha */
+.ali {
+    align-items: center;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    height: 15rem;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+    padding: 3rem 3rem 1rem 3rem;
+    position: relative;
+    width: 28rem;
+
+
+}
+/*Estilos del nombre de cada avatar y su descripción */
+.avatar {
+    color: #232C50;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-top: 1rem;
 }
 .descripcion {
-    font-size: 1rem;
     color: #B9B9C1;
+    font-size: 1rem;
     font-weight: 600;
+}
+/* Se coloca display:none para que no aparezcan en la versión mobile*/
+.anisha,
+.shanai {
+    display: none;
 }
 
 /*---------- SECTION NARANJA --------- */
 .container-6 {
+    align-items: center;
     background-color: #F3613C;
-    margin-top: 2rem;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     height: 25rem;
+    justify-content: space-around;
+    margin-top: 2rem;
     padding: 4rem 0rem;
+    width: 100%;
 }
 
 .container-6 p {
-    width: 70%;
     color: #FFFFFF;
     font-size: 2.5rem;
     font-weight: 600;
-    text-align: center;
     letter-spacing: -0.01rem;
+    text-align: center;
+    width: 70%;
 }
 
-/*button*/
-.blanco {
+/* Se toman las propiedades de la propiedad button y se modifican y/o agregan otras */
+/*button*/ .blanco {
     background-color: #FFFFFF;
-    color: #F3603B;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    color: #F3603B;
+
 }
 
 /*----------- FOOTER ---------------*/
-/*--------- BARRA DE BÚSQUEDA ------*/
 footer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    padding-top: 2rem;
     background-color: #1E1E26;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     height: 35rem;
+    justify-content: space-around;
+    padding-top: 2rem;
 }
-
+/*--------- BARRA DE BÚSQUEDA ------*/
 .search {
-    width: 20rem;
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     padding: 0rem 2rem;
-
+    width: 20rem;
 }
 
 footer input {
-    width: 60%;
-    height: 3rem;
-    border-radius: 15px;
     border: none;
+    border-radius: 15px;
+    height: 3rem;
+    width: 60%;
 }
 
 footer input::placeholder {
     font-size: 0.8rem;
-    text-align: left;
     text-align: center;
 }
 
 /*----------------- FOOTER NAVBAR ------*/
 .navbar {
+    align-items: center;
     display: flex;
     justify-content: space-around;
     padding: 0.5rem 4rem;
     width: 100%;
-    align-items: center;
 }
 
 .navbar li {
     color: #FFFFFF;
-    padding-top: 1rem;
     font-size: 1rem;
     font-weight: 400;
     list-style-type: none;
+    padding-top: 1rem;
 }
 
 
 /*--------- ICONOS ----------*/
 .iconos {
-    width: 9.375rem;
+    align-items: center;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     padding-bottom: 0.1rem;
+    width: 9.375rem;
 }
 
 .iconos img {
-    width: 1rem;
     height: 1rem;
+    width: 1rem;
 }
 
 /*-------- LOGO ---------*/
 footer>div>p {
+    color: #B9B9C1;
     font-size: 0.75rem;
     text-align: center;
-    color: #B9B9C1;
 }
 
+/* MEDIA QUERIES */
 
-
-
-@media (min-width:800px) {
+@media (min-width:1440px) {
     html {
         font-size: 16px;
     }
 
     /******** HEADER ********/
-    header,main {
+    header,
+    main {
         padding: 2% 10%;
         position: static;
     }
-    header>nav>ul>li {
-        visibility:collapse;
-        display: flex;
-        align-items: center;
+    /* Se da un valor máximo para el ancho de cada bloque dentro del main */
+    main>div>section {
+        max-width: 40%;
     }
-    header>nav{
+    /* Se le da un ancho menor al contenedor padre para que los list items se alineen con una referencia más corta */
+    header>nav {
         width: 50%;
     }
+
+    /*Se oculta menú hamburguesa */
+    header>nav>ul>li {
+        align-items: center;
+        display: flex;
+        visibility: collapse;
+    }
+
     .submenu {
         align-items: center;
+        background-color: transparent;
         display: flex;
         flex-direction: row;
         font-size: 0.8rem;
@@ -403,25 +422,32 @@ footer>div>p {
         height: 100%;
         justify-content: space-around;
         list-style-type: none;
-        position:static;
+        position: static;
         top: auto;
         width: 100%;
         visibility: visible;
         z-index: 0;
-        background-color: transparent;
+
     }
-    .submenu a{
-        color:#242E52;
+
+    .submenu a {
+        color: #242E52;
     }
-    .submenu>li{
+
+    .submenu>li {
         padding-right: 0.5rem;
     }
-    .desktop{
-        display:flex;
+    .submenu li:hover{
+        transform: scale(1.3) ease;
+    }
+    /* Se visibiliza el boton en la version desktop */
+    /*.button */.desktop {
         align-items: center;
+        display: flex;
         justify-content: center;
     }
-    .menu>ul>li:hover .submenu{
+/* Se deshabilita la función del cursos sobre el menú hamburguesa */
+    .menu>ul>li:hover .submenu {
         background-color: transparent;
         right: 0;
         transition: 0.4s;
@@ -430,117 +456,218 @@ footer>div>p {
         visibility: visible;
         z-index: 0;
     }
+
     /************* MAIN **********/
 
 
     .contenedor-principal {
-        padding-top: 5rem;
         justify-content: space-between;
+        padding-top: 5rem;
     }
 
-    .container-2 {
-        order: -1;
-        padding-top: 4rem;
-        align-items: flex-start;
-    }
+    /* Contenedores con estilos compartidos */
     .container-2 div,
-    .container-3 div{
+    .container-3 div {
         justify-content: flex-start;
     }
+
     .container-2 div h2,
     .container-2 div p,
     .container-3 div h3,
-    .container-3 div p{
-        text-align:left;
+    .container-3 div p {
         align-items: left;
+        text-align: left;
     }
-    #container__2{
+
+    /* CONTAINER 2 */
+    #container__2 {
         padding-left: 0.3rem;
     }
-    .container-3{
+    .container-2 {
+        align-items: flex-start;
+        order: -1;
+        padding-top: 4rem;
+    }
+    .container-2 div h2{
+        font-size: 4rem;
+    }
+
+    /* CONTAINER 3 */
+    .container-3 {
         align-items: left;
         justify-content: flex-start;
-        padding-top:6rem ;
-        
+        padding-top: 6rem;
     }
-    .container-3 div p{
-        color:#000000;
+
+    .container-3 div p {
+        color: #000000;
     }
-    .container-4{
+
+/* CONTAINER 4 */
+    .container-4 {
         padding-top: 4.5rem;
     }
-    .container-6{
+
+    /* CONTAINER 6 */
+    .container-6 {
         flex-direction: row;
-        padding: 0 0rem;
         height: 15rem;
+        padding: 0 0rem;
     }
-    .container-6 p{
-        width: 30%;
+
+    .container-6 p {
         text-align: left;
+        width: 30%;
     }
 
     /******** AVATARES *********/
 
     .container-5>div>article {
+        align-items: center;
+        background-color: #FAFAFA;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-bottom: 1rem;
+        height: 15rem;
         padding: 3rem 5% 1rem 5%;
+        position: relative;
         width: 35rem;
     }
-    .anisha, .shanai{
-        visibility: visible;
-    }
-    .personas{
+    /* Se visibilizan los demás avatares */
+    .anisha,
+    .shanai {
         display: flex;
+    }
+
+    .personas {
         justify-content: space-between;
+        display: flex;
+        
     }
 
     /*************** FOOTER **********/
-    footer{
-    position: relative;
-    height: 16rem;
-    padding: 0;
+    footer {
+        height: 16rem;
+        padding: 0;
+        position: relative;
     }
-    .search{
-        position:absolute;
+    /* Barra de búsqueda */
+    .search {
+        padding: 0;
+        position: absolute;
         right: 15%;
         top: 20%;
-        padding: 0;
     }
-    .button .num{
+
+    .button .num {
         margin: 0;
     }
-    .search>button{
-        cursor:pointer
+    /* Para que cambie el tipo de cursar al posarse sobre el button*/
+    .search>button {
+        cursor: pointer
     }
-    footer>div>p{
+    /* Copyrigth */
+    footer>div>p {
+        bottom: 20%;
         font-size: 0.9rem;
         position: absolute;
-        bottom: 20%;
         right: 16%;
     }
-    #logo2{
-        position: absolute;
+    /*Logo footer */
+    #logo2 {
         left: 15%;
-        top:20%;
-    }
-    .iconos{
         position: absolute;
-        padding: 0;
+        top: 20%;
+    }
+
+    .iconos {
+        bottom: 25%;
         left: 14.5%;
-        bottom: 25%
+        padding: 0;
+        position: absolute;        
     }
-    .navbar{
-        padding:0;
-        position: absolute;
+
+    .navbar {
+        align-items: flex-start;
         left: 30%;
+        padding: 0;
+        position: absolute;
         top: 20%;
         width: 30%;
-        align-items: flex-start;
     }
-    .navbar li{
-        padding-top: 0;
+
+    .navbar li {
         padding-bottom: 1rem;
+        padding-top: 0;
     }
+
+    
+}
+
+@media (min-width:800px) and (max-width:1440px) {
     main>div>section {
-        max-width: 40%;
+        max-width: 55%;
+    }
+    /*Se oculta menú hamburguesa */
+    header>nav>ul>li {
+        align-items: center;
+        display: flex;
+        visibility: collapse;
+    }
+
+    .submenu {
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        font-size: 1.1rem;
+        font-weight: 400;
+        height: 100%;
+        justify-content: space-between;
+        list-style-type: none;
+        position: static;
+        top: auto;
+        width: 100%;
+        visibility: visible;
+        z-index: 0;
+
+    }
+
+    .submenu a {
+        color: #242E52;
+    }
+
+    .submenu>li {
+        padding-right: 1rem;
+    }
+    /* Se visibiliza el boton en la version desktop */
+    /*.button */.desktop {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+/* Se deshabilita la función del cursos sobre el menú hamburguesa */
+    .menu>ul>li:hover .submenu {
+        background-color: transparent;
+        right: 0;
+        transition: 0.4s;
+        top: 0;
+        transition-timing-function: ease;
+        visibility: visible;
+        z-index: 0;
+    }
+
+    .container-2 div h2{
+        font-size: 4rem;
+    }
+
+    /* Se achica la altura del contenedor 6, el último antes de llegar al footer*/
+    .container-6{
+        height: 15rem;
+    }
+    /*Se achica la altura del footer */
+    footer{
+        height: 22rem;
     }
 }
